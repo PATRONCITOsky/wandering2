@@ -15,12 +15,12 @@ def walking(location, wandering, steps):
 
 def simulate_walk(steps, number_attemps, type_wandering):
     wandering = type_wandering(name='Alario')
-    origen = Track(0,0)
+    origen = Track(0, 0)
     distances = []
     
     for _  in range(number_attemps):
         location = Location()
-        location.add_wandering(Wandering, origen)
+        location.add_wandering(wandering, origen)
         simulations_walk = walking(location, wandering, steps)
         distances.append(round(simulations_walk, 1))
     return distances
@@ -35,7 +35,7 @@ def main(distances_walk, number_attemps, type_wandering):
     
     for steps in distances_walk:
         distances = simulate_walk(steps, number_attemps, type_wandering)
-        middle_distance = roun(sum(distances) / len(distances), 4)
+        middle_distance = round(sum(distances) / len(distances), 4)
         max_distances= max(distances)
         min_distances = min(distances)
         average_walking_distance.append(middle_distance)
