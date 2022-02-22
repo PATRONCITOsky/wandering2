@@ -7,7 +7,7 @@ class Track:
     def move(self, delta_x, delta_y):
         return Track(self.x + delta_x, self.y + delta_y)
     
-    def distancie(self, other_track):
+    def distance(self, other_track):
         delta_x = self.x - other_track.x
         delta_y = self.y - other_track.y
         
