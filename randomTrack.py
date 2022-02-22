@@ -15,19 +15,19 @@ def walking(location, wandering, steps):
 
 def simulate_walk(steps, number_attemps, type_wandering):
     wandering = type_wandering(name='Alario')
-    origen = Location(0,0)
+    origen = Track(0,0)
     distances = []
     
     for _  in range(number_attemps):
-        track = Track()
-        track.add_wandering(Wandering, origen)
-        simulations_walk = walking(track, wandering, steps)
+        location = Location()
+        location.add_wandering(Wandering, origen)
+        simulations_walk = walking(location, wandering, steps)
         distances.append(round(simulations_walk, 1))
     return distances
 
 def graph(x, y):
     graphics = figure(title='Camino del Errante', x_axis_label='Pasos', y_axis_label='Distancia')
-    graphics.line(x. y, legend='Distancia')
+    graphics.line(x, y, legend='Distancia')
     show(graphics)
     
 def main(distances_walk, number_attemps, type_wandering):
