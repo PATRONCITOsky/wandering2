@@ -4,11 +4,11 @@ class Track:
         self.x = x
         self.y = y
         
-    def move(self, delta_x, delta_y):
-        return Track(self.x + delta_x, self.y + delta_y)
+    def move(self, delt_x, delt_y):
+        return Track(self.x + delt_x, self.y + delt_y)
     
     def distance(self, other_track):
-        delta_x = self.x - other_track.x
-        delta_y = self.y - other_track.y
+        delt_x = self.x - other_track.x
+        delt_y = self.y - other_track.y
         
-        return (delta_x**2 + delta_y**2)**0.5
+        return (delt_x**2 + delt_y**2)**0.5

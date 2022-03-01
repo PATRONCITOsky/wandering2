@@ -1,5 +1,4 @@
-from turtle import distance
-from wandering import ComunWandering, Wandering
+from wandering import ComunWandering
 from track import Track 
 from location import Location
 
@@ -13,12 +12,12 @@ def walking(location, wandering, steps):
     
     return beginning.distance(location.get_location(wandering))
 
-def simulate_walk(steps, number_attemps, type_wandering):
-    wandering = type_wandering(name='Alario')
+def simulate_walk(steps, number_attempts, type_wandering):
+    wandering = type_wandering(name='SKY')
     origen = Track(0, 0)
     distances = []
     
-    for _  in range(number_attemps):
+    for _  in range(number_attempts):
         location = Location()
         location.add_wandering(wandering, origen)
         simulations_walk = walking(location, wandering, steps)
@@ -27,14 +26,14 @@ def simulate_walk(steps, number_attemps, type_wandering):
 
 def graph(x, y):
     graphics = figure(title='Camino del Errante', x_axis_label='Pasos', y_axis_label='Distancia')
-    graphics.line(x, y, legend='Distancia')
+    graphics.line(x, y, legend_label='Distancia')
     show(graphics)
     
-def main(distances_walk, number_attemps, type_wandering):
+def main(distances_walk, number_attempts, type_wandering):
     average_walking_distance = []
     
     for steps in distances_walk:
-        distances = simulate_walk(steps, number_attemps, type_wandering)
+        distances = simulate_walk(steps, number_attempts, type_wandering)
         middle_distance = round(sum(distances) / len(distances), 4)
         max_distances= max(distances)
         min_distances = min(distances)
@@ -48,4 +47,4 @@ def main(distances_walk, number_attemps, type_wandering):
 if __name__ == '__main__':
     distance_walk = [10, 100, 1000, 10000]
     number_attemps = 100
-    main(distance_walk, number_attemps, ComunWandering)
+    main(distance_walk, number_attempts, ComunWandering)

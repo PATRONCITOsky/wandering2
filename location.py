@@ -1,5 +1,3 @@
-from msilib.schema import Class
-
 class Location: 
     
     def __init__(self):
@@ -10,9 +8,9 @@ class Location:
         self.location_wandering[wandering] = track
         
     def move_wandering(self, wandering):
-        delta_x, delta_y = wandering.walk()
+        delt_x, delt_y = wandering.walk()
         location_now = self.location_wandering[wandering]
-        new_location = location_now.move(delta_x, delta_y)
+        new_location = location_now.move(delt_x, delt_y)
         
         self.location_wandering[wandering] = new_location
         
