@@ -46,5 +46,5 @@ def main(distances_walk, number_attempts, type_wandering):
     
 if __name__ == '__main__':
     distance_walk = [10, 100, 1000, 10000]
-    number_attemps = 100
+    number_attempts = 100
     main(distance_walk, number_attempts, ComunWandering)
