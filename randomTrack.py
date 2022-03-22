@@ -43,8 +43,8 @@ def simulate_walk(steps, number_attempts, type_wandering):
         distances.append(round(simulations_walk, 1))
     return distances
 
-def graph_steps(x_graph, y_graph, type_wandering, steps):
-    graphics = figure(title='Camino del Errante', x_axis_label='Pasos', y_axis_label='Distancia')
+def graph_steps(x_graph, y_graph, know_type, steps):
+    graphics = figure(title=know_type, x_axis_label='Pasos', y_axis_label='Distancia')
     graphics.line(x_graph, y_graph, legend_label=str(steps)+'pasos')
     final_x = x_graph[-1]
     final_y = y_graph[-1]
@@ -72,4 +72,4 @@ def main(distances_walk, number_attempts, type_wandering):
 if __name__ == '__main__':
     distance_walk = [10000]
     number_attempts = 1
-    main(distance_walk, number_attempts, ComunWandering)
+    main(distance_walk, number_attempts, LeftWandering)

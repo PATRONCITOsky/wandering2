@@ -23,6 +23,7 @@ class ComunWandering(Wandering):
         self.x += dx
         self.y += dy
         return [dx,dy]
+
     
 class RightWandering(Wandering):
 
