@@ -1,5 +1,5 @@
 from tkinter import W
-from wandering import ComunWandering, LeftWandering, RightWandering
+from wandering import ComunWandering, CrazyWandering, LeftWandering, RightWandering
 from track import Track
 from location import Location
 
@@ -9,6 +9,8 @@ from bokeh.plotting import figure, output_file, show
 def know_type_wandering(type_wandering):
     if type_wandering.__name__ == "ComunWandering":
         return "Herrante Comun"
+    elif type_wandering.__name__ == "CrazyWandering":
+        return "Herrante Loco"
     elif type_wandering.__name__ == "rightWandering":
         return "Herrante Derecha"
     else:
@@ -31,7 +33,7 @@ def walking(wandering, steps, type_wandering):
     graph_steps(x_graph, y_graph, know_type, steps)
     return wandering.distance_origin()
     
-    return beginning.distance(location.get_location(wandering))
+    
 
 def simulate_walk(steps, number_attempts, type_wandering):
     wandering = []
@@ -72,4 +74,4 @@ def main(distances_walk, number_attempts, type_wandering):
 if __name__ == '__main__':
     distance_walk = [10000]
     number_attempts = 1
-    main(distance_walk, number_attempts, LeftWandering)
+    main(distance_walk, number_attempts, ComunWandering)

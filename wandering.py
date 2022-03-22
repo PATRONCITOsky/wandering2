@@ -24,6 +24,16 @@ class ComunWandering(Wandering):
         self.y += dy
         return [dx,dy]
 
+class CrazyWandering(Wandering):
+
+    def __init__(self, name):
+        super().__init__(name)
+        
+    def walk(self):
+        dx, dy =  random.choice([(0, 3), (0, -3), (3, 0), (-3, 0)])
+        self.x += dx
+        self.y += dy
+        return [dx,dy]
     
 class RightWandering(Wandering):
 
